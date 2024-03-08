@@ -12,7 +12,11 @@
       <a class="button">Image Detection</a>
     </div>
     <div class="map-hotspots">
-      <a href="components/map.html" class="button">Map Hotspots</a>
+      <form id="fileForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" />
+        <button type="button" onclick="uploadFile()">Upload</button>
+      </form>
     </div>
+    <script src="App.js"></script>
   </body>
 </html>

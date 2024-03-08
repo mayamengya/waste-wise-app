@@ -16,3 +16,8 @@ body {
   border-radius: 5px;
   margin-top: 15px;
 }
+
+.button:hover {
+  background-color: #afe1af;
+  cursor: pointer;
+}
