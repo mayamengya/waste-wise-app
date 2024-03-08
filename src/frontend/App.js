@@ -30,11 +30,11 @@ function uploadFile() {
         data.location_data.latitude &&
         data.location_data.longitude
       ) {
-        // Call a function to save coordinates to a file
-        saveCoordinatesToFile(
-          data.location_data.latitude,
-          data.location_data.longitude
-        );
+        // // Call a function to save coordinates to a file
+        // saveCoordinatesToFile(
+        //   data.location_data.latitude,
+        //   data.location_data.longitude
+        // );
 
         // Call a function to display the location on the map
         displayLocationOnMap(
@@ -63,7 +63,6 @@ function saveCoordinatesToFile(latitude, longitude) {
           name: "Uploaded Location",
         },
       },
-      // Add more features if needed
     ],
   };
 

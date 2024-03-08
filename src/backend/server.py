@@ -59,11 +59,13 @@ def convert_gps_coordinates(gps_info):
         lat = lat_deg + lat_min / 60.0 + lat_sec / 3600.0
         lon = lon_deg + lon_min / 60.0 + lon_sec / 3600.0
 
-        if gps_info[3] == 'S':
-            lat = -lat
-        if gps_info[1] == 'W':
-            lon = -lon
+        # if gps_info[3] == 'S':
+        #     lat = -lat
+        # if gps_info[1] == 'W':
+        #     lon = -lon
 
+        lon = -lon
+        
         print(f"Converted GPS coordinates: Latitude={lat}, Longitude={lon}")
         return lat, lon
     except Exception as e:
