@@ -2,12 +2,18 @@ var map;
 var markers = [];
 
 document.addEventListener("DOMContentLoaded", function () {
-  map = L.map("map").setView([49.2827, -123.1207], 12);
+  if (!map) {
+    map = L.map("map").setView([49.2827, -123.1207], 12);
 
-  // Add a tile layer from OpenStreetMap
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors",
-  }).addTo(map);
+    // Add a tile layer from OpenStreetMap
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    console.log("Map initialization completed.");
+  }
 });
 
 function uploadFile() {
@@ -30,12 +36,6 @@ function uploadFile() {
         data.location_data.latitude &&
         data.location_data.longitude
       ) {
-        // // Call a function to save coordinates to a file
-        // saveCoordinatesToFile(
-        //   data.location_data.latitude,
-        //   data.location_data.longitude
-        // );
-
         // Call a function to display the location on the map
         displayLocationOnMap(
           data.location_data.latitude,
@@ -48,42 +48,11 @@ function uploadFile() {
     });
 }
 
-function saveCoordinatesToFile(latitude, longitude) {
-  // Create a GeoJSON-like structure with the coordinates
-  const geoJsonData = {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [longitude, latitude],
-        },
-        properties: {
-          name: "Uploaded Location",
-        },
-      },
-    ],
-  };
-
-  // Convert the GeoJSON data to a JSON string
-  const jsonContent = JSON.stringify(geoJsonData, null, 2);
-
-  // Create a Blob with the JSON content
-  const blob = new Blob([jsonContent], { type: "application/json" });
-
-  // Create a link element and trigger a download
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "uploaded_coordinates.geojson";
-  link.click();
-}
-
 function displayLocationOnMap(latitude, longitude) {
   // Create a new marker and add it to the map
   var marker = L.marker([latitude, longitude])
     .addTo(map)
-    .bindPopup("Uploaded Location")
+    .bindPopup("New Waste Hotspot")
     .openPopup();
 
   // Add the marker to the markers array

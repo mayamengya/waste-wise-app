@@ -92,8 +92,6 @@ def upload_file():
         if not os.path.exists(app.config['UPLOAD_FOLDER']):
             os.makedirs(app.config['UPLOAD_FOLDER'])
         
-        # Save the file to a specific location or process it as needed
-        # For example, save to the current working directory
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
         uploaded_file.save(file_path)
 
