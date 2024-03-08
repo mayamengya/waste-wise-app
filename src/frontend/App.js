@@ -1,3 +1,15 @@
+var map;
+var markers = [];
+
+document.addEventListener("DOMContentLoaded", function () {
+  map = L.map("map").setView([49.2827, -123.1207], 12);
+
+  // Add a tile layer from OpenStreetMap
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors",
+  }).addTo(map);
+});
+
 function uploadFile() {
   const fileInput = document.getElementById("fileInput");
   const file = fileInput.files[0];
@@ -77,4 +89,5 @@ function displayLocationOnMap(latitude, longitude) {
 
   // Add the marker to the markers array
   markers.push(marker);
+  console.log("Marker added to the map at coordinates:", [latitude, longitude]);
 }
