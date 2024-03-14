@@ -2,7 +2,7 @@
 
 **Efficient Waste Management for Sustainable Cities**
 
-![Cover Image](https://drive.google.com/file/d/1KgFZ9Gi7aeQBm0XIQbCgFnXC9FR6-hdh/view?usp=sharing)
+![Cover Image](https://drive.google.com/file/d/1KgFZ9Gi7aeQBm0XIQbCgFnXC9FR6-hdh/view?usp=drive_link)
 
 ## Problem Scope
 
