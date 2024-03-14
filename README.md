@@ -1,16 +1,22 @@
 # WasteWise App
 
-**Efficient Waste Management for Sustainable Cities**
-
-![Cover Image](https://drive.google.com/file/d/1KgFZ9Gi7aeQBm0XIQbCgFnXC9FR6-hdh/view?usp=drive_link)
+**Effective Waste Management for Sustainable Cities**
 
 ## Problem Scope
 
-As urban populations grow, effective and sustainable waste management becomes crucial. Manual inspection and photographic records pose challenges in monitoring urban garbage areas, leading to inefficiencies. Our project addresses this issue by introducing an automatic detection method using AI, enhancing efficiency and tackling urban waste challenges.
+As urban populations continue to surge, the parallel challenge of ensuring efficient and sustainable waste management becomes increasingly pivotal. 
 
-## Solution
+Implementing strategies that prioritize both effectiveness and environmental sustainability is essential to address the escalating issue of waste in expanding cities. (NYU News, 2024)
 
-Introducing WasteWise, a user-friendly app leveraging open-source AI tools for image detection. Our approach semi-automates waste inspection, ensuring consistent, reliable, and time-efficient assessments. By combining advanced image recognition technology with community engagement, WasteWise aims to improve waste management at both individual and city levels.
+The current monitoring and assessment of urban garbage areas heavily depend on manual inspection and photographic records, leading to difficulties and time constraints. Due to the subjective nature of judging garbage, impacted by diverse urban scenes, an automatic detection method is sought within the context of smart cities to improve efficiency and address urban garbage challenges. (Wang & Zhang, 2018)
+
+## Proposed Solution
+
+In order to solve the problems that come up with manual inspection of waste conditions we propose to semi automate the process of inspection  for more consistent, reliable and time efficient assessment of waste conditions.   
+
+Our team endeavors to bridge technology with community engagement. We believe that extending this technology to the community level is essential, as effective waste recycling relies not only on advanced methods but also on the active participation of the community, as highlighted by Yau (2010).
+
+Our proposed solution involves the development of a user-friendly app called WasteWise where we leverage open-source AI tools for image detection. The app will serve as a tool for tracking of individual waste disposal, as well as assessment tool for city waste. This strategic utilization enhances the app's capabilities, aiming to improve user experience by providing insightful analysis of waste items through advanced image recognition technology. The app’s software can further be implemented across industries to help increase non-residential waste turn-over.
 
 ## Final Submission Video
 [Watch here](https://drive.google.com/file/d/1eViK-ml2hLS8eu-tZPgCbtn6QMWn9-PH/view?usp=drive_link)
