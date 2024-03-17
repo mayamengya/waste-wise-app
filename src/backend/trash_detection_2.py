@@ -1,10 +1,8 @@
-# remember to add this file to git
-import torch
-import cv2
-import numpy as np
-import io
+# import torch
+# import cv2
+# import numpy as np
+# import io
 import os
-import supervision as sv
 from ultralytics import YOLO
 import json
 
@@ -40,7 +38,7 @@ def image_detection(file_name):
         'image_path': 'trash_image_7.jpg', 'prediction_type': 'ObjectDetectionModel'}],
         'image': {'width': '800', 'height': '500'}}
     """
-    img = cv2.imread(file_name)
+    # img = cv2.imread(file_name)
 
     # train model for trash detection on custom dataset
     # model =  YOLO('yolov8m.pt')
