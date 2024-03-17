@@ -27,6 +27,7 @@ def make_unique_json_file(directory, file_name):
             return new_file_path
         i += 1
 
+
 def image_detection(file_name):
     """
         Analyzes image for trash, copies the image and surrounds the highlighted trash with marker and prediction confidence
@@ -96,6 +97,7 @@ print(image_detection('trash_image_24.jpg'))
 print(image_detection('trash_image_25.jpg'))
 print(image_detection('ocean_trash_image_1.jpg'))
 print(image_detection('ocean_trash_image_2.jpg'))
-print(image_detection('ocean_trash_image_3.jpg'))"""
+print(image_detection('ocean_trash_image_3.jpg'))
+"""
 print(image_detection('ocean_trash_image_4.jpg'))
 
