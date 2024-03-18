@@ -51,7 +51,7 @@ def image_detection(file_name):
 
     result = model.predict(file_name, save=True, show=True)
 
-    input()
+    # input()
 
     # Store Json Results
     results = json.loads(result[0].tojson())
@@ -97,5 +97,22 @@ print(image_detection('ocean_trash_image_1.jpg'))
 print(image_detection('ocean_trash_image_2.jpg'))
 print(image_detection('ocean_trash_image_3.jpg'))
 """
-print(image_detection('ocean_trash_image_4.jpg'))
+# print(image_detection('trash_image_26.jpg'))
+# print(image_detection('trash_image_27.jpg'))
+# print(image_detection('trash_image_28.jpg'))
+# print(image_detection('trash_image_29.jpg'))
+# print(image_detection('trash_image_30.jpg'))
+# print(image_detection('trash_image_31.jpg'))
+# print(image_detection('trash_image_32.jpg'))
+# print(image_detection('trash_image_33.jpg'))
+# print(image_detection('trash_image_34.jpg'))
+# print(image_detection('trash_image_35.jpg'))
+# print(image_detection('trash_image_36.jpg'))
+# print(image_detection('trash_image_37.jpg'))
+
+print(image_detection('trash_image_38.jpg'))
+print(image_detection('trash_image_39.jpg'))
+print(image_detection('trash_image_40.jpg'))
+
+
 
