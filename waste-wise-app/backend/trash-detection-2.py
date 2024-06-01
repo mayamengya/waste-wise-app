@@ -49,11 +49,11 @@ def image_detection(file_name):
     # results = model.train(data='garbage_classification/trash.yaml')
 
     # Load a model
-    model = YOLO('best (8).pt')  # load a model from dataset
+    model = YOLO('model/best (8).pt')  # load a model from dataset
 
     result = model.predict(file_name, save=True, show=True)
 
-    # input()
+    input()
 
     # Store Json Results
     results = json.loads(result[0].tojson())
@@ -69,52 +69,9 @@ def image_detection(file_name):
     return result
 
 
-"""
-print(image_detection('trash_image_1.jpg'))
-print(image_detection('trash_image_2.jpg'))
-print(image_detection('trash_image_3.jpg'))
-print(image_detection('trash_image_4.jpg'))
-print(image_detection('trash_image_5.jpg'))
-print(image_detection('trash_image_6.jpg'))
-print(image_detection('trash_image_7.jpg'))
-# print(image_detection('trash_image_8.jpg'))
-print(image_detection('trash_image_9.jpg'))
-print(image_detection('trash_image_10.jpg'))
-print(image_detection('trash_image_11.jpg'))
-# print(image_detection('trash_image_12.jpg'))
-print(image_detection('trash_image_13.jpg'))
-print(image_detection('trash_image_14.jpg'))
-print(image_detection('trash_image_15.jpg'))
-print(image_detection('trash_image_16.jpg'))
-print(image_detection('trash_image_17.jpg'))
-print(image_detection('trash_image_18.jpg'))
-print(image_detection('trash_image_19.jpg'))
-# print(image_detection('trash_image_20.jpg'))
-# print(image_detection('trash_image_21.jpg'))
-print(image_detection('trash_image_22.jpg'))
-print(image_detection('trash_image_23.jpg'))
-print(image_detection('trash_image_24.jpg'))
-print(image_detection('trash_image_25.jpg'))
-print(image_detection('ocean_trash_image_1.jpg'))
-print(image_detection('ocean_trash_image_2.jpg'))
-print(image_detection('ocean_trash_image_3.jpg'))
-"""
-# print(image_detection('trash_image_26.jpg'))
-# print(image_detection('trash_image_27.jpg'))
-# print(image_detection('trash_image_28.jpg'))
-# print(image_detection('trash_image_29.jpg'))
-# print(image_detection('trash_image_30.jpg'))
-# print(image_detection('trash_image_31.jpg'))
-# print(image_detection('trash_image_32.jpg'))
-# print(image_detection('trash_image_33.jpg'))
-# print(image_detection('trash_image_34.jpg'))
-# print(image_detection('trash_image_35.jpg'))
-# print(image_detection('trash_image_36.jpg'))
-# print(image_detection('trash_image_37.jpg'))
+print(image_detection('static/trash_image_40.jpg'))
 
-print(image_detection('trash_image_38.jpg'))
-print(image_detection('trash_image_39.jpg'))
-print(image_detection('trash_image_40.jpg'))
+
 
 
 

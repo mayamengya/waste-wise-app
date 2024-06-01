@@ -47,4 +47,4 @@ def image_detection(file_name):
     return result
 
 
-print(image_detection('trash_image_7.jpg'))
+print(image_detection('static/trash_image_7.jpg'))
