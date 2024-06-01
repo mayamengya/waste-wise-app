@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Detection App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .sample-images img {
+            width: 100px;
+            margin: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .sample-images img:hover {
+            border: 2px solid #007BFF;
+        }
+        #uploaded-image, #result-image {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+        #result-json {
+            white-space: pre-wrap;
+            text-align: left;
+            margin: 20px 0;
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Detection App</h1>
+        <input type="file" id="image-upload" accept="image/*">
+        <div class="sample-images">
+            <h2>Or select a sample image:</h2>
+            <img src="{{ url_for('static', filename='trash_image_2.jpg') }}" alt="Sample 1" onclick="selectSampleImage('{{ url_for('static', filename='trash_image_2.jpg') }}')">
+            <img src="{{ url_for('static', filename='trash_image_16.jpg') }}" alt="Sample 2" onclick="selectSampleImage('{{ url_for('static', filename='trash_image_16.jpg') }}')">
+            <img src="{{ url_for('static', filename='trash_image_40.jpg') }}" alt="Sample 3" onclick="selectSampleImage('{{ url_for('static', filename='trash_image_40.jpg') }}')">
+        </div>
+        <img id="uploaded-image" src="#" alt="Your Image" style="display:none;">
+        <button onclick="runDetection()">Run Detection</button>
+        <img id="result-image" src="#" alt="Result Image" style="display:none;">
+        <pre id="result-json"></pre>
+        <a id="download-json" href="#" download="results.json" style="display:none;">Download JSON</a>
+    </div>
+
+    <script>
+        let selectedImage = null;
+
+        document.getElementById('image-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedImage = file;
+                displayImage(URL.createObjectURL(file));
+            }
+        });
+
+        function selectSampleImage(src) {
+            selectedImage = src;
+            displayImage(src);
+        }
+
+        function displayImage(src) {
+            const uploadedImage = document.getElementById('uploaded-image');
+            uploadedImage.src = src;
+            uploadedImage.style.display = 'block';
+        }
+
+        function runDetection() {
+            if (!selectedImage) {
+                alert('Please upload or select an image first.');
+                return;
+            }
+
+            const formData = new FormData();
+            if (typeof selectedImage === 'string') {
+                formData.append('image_url', selectedImage);
+            } else {
+                formData.append('image', selectedImage);
+            }
+
+            fetch('/run-detection', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultImage = document.getElementById('result-image');
+                resultImage.src = `data:image/jpeg;base64,${data.image}`;
+                resultImage.style.display = 'block';
+
+                const resultJson = document.getElementById('result-json');
+                resultJson.textContent = JSON.stringify(JSON.parse(data.json_results), null, 2);
+
+                const downloadLink = document.getElementById('download-json');
+                downloadLink.href = `data:application/json;base64,${btoa(data.json_results)}`;
+                downloadLink.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
