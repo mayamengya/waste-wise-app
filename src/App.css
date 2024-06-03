@@ -1,17 +1,149 @@
-body {
-  color: #fff;
-  background-color: #7bb570;
-  font-family: monospace;
+/* Overall styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Reem Kufi", sans-serif !important;
 }
 
-.container {
+.App {
+  min-height: 100vh;
+  width: 85vw;
+  max-width: 1900px;
+  margin: 0rem auto;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #f6f6f6;
+}
+
+/* Top intro section styling */
+
+.home-text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-image-section {
+  max-width: 600px;
+  flex: 1;
+}
+
+/* Using this to create space at the top of the page, eventually can be used to add a NavBar */
+.home-banner-container {
+  position: relative;
+  display: flex;
+  padding-top: 3rem;
+}
+
+/* Image detection styling */
+
+.image-detection-container {
+  margin-top: 20rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-detection-image-container {
+  flex: 0.9;
+  margin-right: 1rem;
+
+}
+
+.about-background-image-container {
+  position: absolute;
+  left: -150px;
+  z-index: -2;
+}
+
+.image-detection-text-container {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-detection-buttons-container {
+  margin-top: 2rem;
   display: flex;
 }
 
-.half {
-  width: 50%;
-  box-sizing: border-box;
-  padding: 15px;
+/* Inspiration styling */
+
+.inspiration-section-wrapper {
+  margin-top: 15rem;
+}
+.inspiration-section-top p {
+  text-align: center;
+  max-width: 600px !important;
+}
+.inspiration-section-top h1 {
+  max-width: 700px !important;
+}
+.inspiration-section-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.inspiration-section-info {
+  width: 290px;
+  min-height: 350px;
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+  color: #505050;
+  margin: 1rem 2rem;
+}
+.inspiration-section-info h2 {
+  margin: 1rem 0rem;
+}
+.inspiration-section-bottom {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.inspiration-section-info p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+/* General resuseable styling */
+
+.primary-heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #4c4c4c;
+  max-width: 600px;
+}
+
+.primary-text {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 500px;
+  color: #6a6a6a;
+  margin: 1.5rem 0rem;
+}
+
+.primary-subheading {
+  font-weight: 700;
+  color: #34592d;
+  font-size: 1.15rem;
 }
 
 .button {
@@ -24,7 +156,23 @@ body {
   margin-top: 15px;
 }
 
-.button:hover {
+.secondary-button {
+  padding: 1rem 2.5rem;
+  background-color: #34592d;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .button:hover {
   background-color: #afe1af;
   cursor: pointer;
-}
+} */
