@@ -2,7 +2,7 @@
 # import a utility function for loading Roboflow models
 from roboflow import Roboflow
 # import HTTPClient for API verification
-from inference_sdk import InferenceHTTPClient
+# from inference_sdk import InferenceHTTPClient
 # import supervision to visualize our results
 import supervision as sv
 # import OpenCV
@@ -27,16 +27,13 @@ def image_detection(file_name):
     model = project.version(9).model
 
     result = model.predict(file_name, confidence=40, overlap=30).json()
-
     labels = [item["class"] for item in result["predictions"]]
-
     detections = sv.Detections.from_roboflow(result)
-
     label_annotator = sv.LabelAnnotator()
     bounding_box_annotator = sv.BoxAnnotator()
 
+    # putting bounding bars around trash in images
     image = cv2.imread(file_name)
-
     annotated_image = bounding_box_annotator.annotate(
         scene=image, detections=detections)
     annotated_image = label_annotator.annotate(
